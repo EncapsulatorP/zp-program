@@ -48,11 +48,9 @@ Checks if a single number (like `Zeta(5)`) satisfies a polynomial equation $$P(x
 ### 2\. Linear Independence Scans (Multi-Number)
 
 Checks if a group of numbers satisfies a linear equation:
-$$
-\<p align="center"\>
-\<img src="https://www.google.com/search?q=https://latex.codecogs.com/svg.latex%3Fc\_0 + c\_1 x\_1 + c\_2 x\_2 + \\dots + c\_n x\_n = 0" alt="Linear Relation Equation" /\>
-\</p\>
-$$
+
+$$c_0 + c_1 x_1 + c_2 x_2 + \dots + c_n x_n = 0$$
+
   * **`z_p/experiments/linear_independence_scan.py`**:
       * **Odd Zetas:** Checks $$\{1, \zeta(3), \zeta(5), \zeta(7), \zeta(9)\}$$ (Conjectured independent).
       * **Schanuel Set:** Checks $$\{\pi, e, \ln(2)\}$$ (Expected independent).
@@ -65,16 +63,11 @@ $$
 ### The Known Case (Even Zetas)
 
 For odd primes $$p$$, we define:
-$$
-\<p align="center"\>
-\<img src="https://www.google.com/search?q=https://latex.codecogs.com/svg.latex%3FZ(p) = e^{\\pi \\zeta(p-1)/p} + 1" alt="Z(p) Definition" /\>
-\</p\>
+ Z(p) = e^{\\pi \\zeta(p-1)/p} + 1" alt="Z(p) Definition" /\>
 $$
 Using Euler's formula for even zeta values $$\zeta(2k)$$, we derive the exact rational coefficient $$c_p$$:
 $$
-\<p align="center"\>
-\<img src="https://latex.codecogs.com/svg.latex?c\_p = (-1)^{\\frac{p+1}{2}} \\frac{2^{p-2} B\_{p-1}}{p (p-1)\!}" alt="c\_p Formula" /\>
-\</p\>
+c\_p = (-1)^{\\frac{p+1}{2}} \\frac{2^{p-2} B\_{p-1}}{p (p-1)\!}"
 $$
 Since $$c_p$$ is rational and $$\pi$$ is transcendental (Lindemann), $$Z(p)$$ is transcendental. This serves as our **calibration ground**.
 
