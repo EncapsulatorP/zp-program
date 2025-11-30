@@ -63,12 +63,13 @@ $$c_0 + c_1 x_1 + c_2 x_2 + \dots + c_n x_n = 0$$
 ### The Known Case (Even Zetas)
 
 For odd primes $$p$$, we define:
- Z(p) = e^{\\pi \\zeta(p-1)/p} + 1" alt="Z(p) Definition" /\>
-$$
+
+$$ Z(p) = e^{\\pi \\zeta(p-1)/p} + 1 $$
+
 Using Euler's formula for even zeta values $$\zeta(2k)$$, we derive the exact rational coefficient $$c_p$$:
-$$
-c\_p = (-1)^{\\frac{p+1}{2}} \\frac{2^{p-2} B\_{p-1}}{p (p-1)\!}"
-$$
+
+$$c\_p = (-1)^{\\frac{p+1}{2}} \\frac{2^{p-2} B\_{p-1}}{p (p-1)\!}$$
+
 Since $$c_p$$ is rational and $$\pi$$ is transcendental (Lindemann), $$Z(p)$$ is transcendental. This serves as our **calibration ground**.
 
 ### The Open Case (Odd Zetas & Periods)
