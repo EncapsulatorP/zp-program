@@ -1,3 +1,4 @@
+````markdown
 # Z(p) Irrationality & Transcendence Explorer
 
 [![CI](https://github.com/kugguk2022/zp-program/actions/workflows/ci.yml/badge.svg)](https://github.com/kugguk2022/zp-program/actions/workflows/ci.yml)
@@ -143,7 +144,5 @@ If you use this work in your research, please cite:
 -author={kugguk2022},
 -year={2025}, 
 -url={[https://github.com/kugguk2022/lotteries](https://github.com/EncapsulatorP/zp-program/)} }
-```
-
 ```
 ```
