@@ -1,4 +1,3 @@
-````markdown
 # Z(p) Irrationality & Transcendence Explorer
 
 [![CI](https://github.com/kugguk2022/zp-program/actions/workflows/ci.yml/badge.svg)](https://github.com/kugguk2022/zp-program/actions/workflows/ci.yml)
@@ -14,10 +13,10 @@ This project moves beyond known values to explore the **arithmetic nature of odd
 
 We aim to generate and classify "maximal" subsets of irrational numbers by probing their properties:
 
-1.  **Algebraic Relation Scans:** Is a constant $\alpha$ a root of a polynomial with integer coefficients?
-2.  **Linear Independence Scans:** Is a set $\{1, \alpha, \beta, \gamma\}$ linearly dependent over $\mathbb{Q}$?
+1.  **Algebraic Relation Scans:** Is a constant $$\alpha$$ a root of a polynomial with integer coefficients?
+2.  **Linear Independence Scans:** Is a set $$\{1, \alpha, \beta, \gamma\}$$ linearly dependent over $\mathbb{Q}$?
 
-While we document the classical derivation for even zeta values (where $Z(p)$ is known transcendental), the core value of this repo is applying these heuristic probes to **open problems** like $\zeta(3)$, $\zeta(5)$, and Schanuel-type conjectures.
+While we document the classical derivation for even zeta values (where $$Z(p)$$ is known transcendental), the core value of this repo is applying these heuristic probes to **open problems** like $$\zeta(3)$$, $$\zeta(5)$$, and Schanuel-type conjectures.
 
 ---
 
@@ -39,25 +38,25 @@ pytest -q
 
 ### 1\. Algebraic Relation Scans (Single Number)
 
-Checks if a single number (like `Zeta(5)`) satisfies a polynomial equation $P(x) = 0$.
+Checks if a single number (like `Zeta(5)`) satisfies a polynomial equation $$P(x) = 0$$.
 
-  * **`z_p/experiments/pslq_scan.py`**: Sweeps odd primes to check $Z(p)$ itself.
+  * **`z_p/experiments/pslq_scan.py`**: Sweeps odd primes to check $$Z(p)$$ itself.
   * **`z_p/experiments/maximal_pslq_scan.py`**: A targeted probe for specific constants.
-      * *Targets:* $\zeta(3), \zeta(5)$, Catalan's Constant, Euler-Mascheroni.
+      * *Targets:* $$\zeta(3), \zeta(5)$$, Catalan's Constant, Euler-Mascheroni.
       * *Usage:* Run directly to scan these built-in targets.
 
 ### 2\. Linear Independence Scans (Multi-Number)
 
 Checks if a group of numbers satisfies a linear equation:
-
+$$
 \<p align="center"\>
 \<img src="https://www.google.com/search?q=https://latex.codecogs.com/svg.latex%3Fc\_0 + c\_1 x\_1 + c\_2 x\_2 + \\dots + c\_n x\_n = 0" alt="Linear Relation Equation" /\>
 \</p\>
-
+$$
   * **`z_p/experiments/linear_independence_scan.py`**:
-      * **Odd Zetas:** Checks $\{1, \zeta(3), \zeta(5), \zeta(7), \zeta(9)\}$ (Conjectured independent).
-      * **Schanuel Set:** Checks $\{\pi, e, \ln(2)\}$ (Expected independent).
-      * **Sanity Check:** Validates against a known relation ($\sin^2 + \cos^2 - 1 = 0$) to prove the tool works.
+      * **Odd Zetas:** Checks $$\{1, \zeta(3), \zeta(5), \zeta(7), \zeta(9)\}$$ (Conjectured independent).
+      * **Schanuel Set:** Checks $$\{\pi, e, \ln(2)\}$$ (Expected independent).
+      * **Sanity Check:** Validates against a known relation ($$\sin^2 + \cos^2 - 1 = 0$$) to prove the tool works.
 
 -----
 
@@ -65,26 +64,26 @@ Checks if a group of numbers satisfies a linear equation:
 
 ### The Known Case (Even Zetas)
 
-For odd primes $p$, we define:
-
+For odd primes $$p$$, we define:
+$$
 \<p align="center"\>
 \<img src="https://www.google.com/search?q=https://latex.codecogs.com/svg.latex%3FZ(p) = e^{\\pi \\zeta(p-1)/p} + 1" alt="Z(p) Definition" /\>
 \</p\>
-
-Using Euler's formula for even zeta values $\zeta(2k)$, we derive the exact rational coefficient $c_p$:
-
+$$
+Using Euler's formula for even zeta values $$\zeta(2k)$$, we derive the exact rational coefficient $$c_p$$:
+$$
 \<p align="center"\>
 \<img src="https://latex.codecogs.com/svg.latex?c\_p = (-1)^{\\frac{p+1}{2}} \\frac{2^{p-2} B\_{p-1}}{p (p-1)\!}" alt="c\_p Formula" /\>
 \</p\>
-
-Since $c_p$ is rational and $\pi$ is transcendental (Lindemann), $Z(p)$ is transcendental. This serves as our **calibration ground**.
+$$
+Since $$c_p$$ is rational and $$\pi$$ is transcendental (Lindemann), $$Z(p)$$ is transcendental. This serves as our **calibration ground**.
 
 ### The Open Case (Odd Zetas & Periods)
 
-For values like $\zeta(3)$ or combinations like $e + \pi$, no such closed forms exist.
+For values like $$\zeta(3)$$ or combinations like $$e + \pi$$, no such closed forms exist.
 
   * **Lindemann–Weierstrass** does not apply (exponents are not algebraic).
-  * **Gelfond–Schneider** does not apply ($\pi$ is not algebraic).
+  * **Gelfond–Schneider** does not apply ($$\pi$$ is not algebraic).
   * **Schanuel's Conjecture** suggests independence but is unproven.
 
 **This is where our heuristic scans provide value.**
@@ -95,14 +94,14 @@ For values like $\zeta(3)$ or combinations like $e + \pi$, no such closed forms 
 
 ### Algebraic Scans
 
-  * `POSSIBLE RELATION FOUND`: The tool found coefficients such that $\sum a_i x^i \approx 0$.
-      * *Action:* Check the **residual**. If it is $10^{-100}$ or smaller, verify with higher precision.
+  * `POSSIBLE RELATION FOUND`: The tool found coefficients such that $$\sum a_i x^i \approx 0$$.
+      * *Action:* Check the **residual**. If it is $$10^{-100}$$ or smaller, verify with higher precision.
   * `None`: No relation found up to the specified Degree and Height.
       * *Meaning:* Evidence that the number is likely transcendental (or the defining polynomial is massive).
 
 ### Linear Independence
 
-  * `RELATION FOUND`: The numbers are linearly dependent (e.g., $2x - 3y = 0$).
+  * `RELATION FOUND`: The numbers are linearly dependent (e.g., $$2x - 3y = 0$$).
   * `No linear relation found`: The set appears linearly independent.
       * *Significance:* This is a computational verification of the prerequisites for Schanuel's Conjecture.
 
@@ -126,8 +125,8 @@ tests/
 
 ## 🛣️ Roadmap
 
-1.  **Refine Heuristics:** Increase bit-precision and polynomial degree limits for deeper scans of $\zeta(5)$.
-2.  **Expand Scope:** Add generalized Polylogarithms $Li_s(z)$ to the generator.
+1.  **Refine Heuristics:** Increase bit-precision and polynomial degree limits for deeper scans of $$\zeta(5)$$.
+2.  **Expand Scope:** Add generalized Polylogarithms $$Li_s(z)$$ to the generator.
 3.  **Documentation:** Formalize the link between "Linear Independence Scans" and the conditions required for Schanuel’s Conjecture.
 
 -----
@@ -145,4 +144,5 @@ If you use this work in your research, please cite:
 -year={2025}, 
 -url={[https://github.com/kugguk2022/lotteries](https://github.com/EncapsulatorP/zp-program/)} }
 ```
+
 ```
