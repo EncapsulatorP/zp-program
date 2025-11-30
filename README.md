@@ -34,8 +34,9 @@ pytest -q
 
 ### Algebraic relation scans (single number)
 - `z_p/experiments/pslq_scan.py`: sweep odd primes and search for algebraic relations of `Z(p)` itself.  
-  Example: `python z_p/experiments/pslq_scan.py --pmin 3 --pmax 31 --prec 300 --deg 6 --height 2000`
-- `z_p/experiments/maximal_pslq_scan.py`: “maximal” probe for one constant at a time (e.g., `zeta(3)`, `zeta(5)`, Catalan, Euler–Mascheroni). Run it as a script to scan the built-in targets, or adapt `run_maximal_scan` for your own constant and bounds.
+  Example: `python z_p/experiments/pslq_scan.py --pmin 3 --pmax 31 --prec 300 --deg 6 --height 2000 --processes 4 --timeout 30`  
+  Prime sweeps use multiprocessing; set `--timeout` (seconds) to skip outliers.
+- `z_p/experiments/maximal_pslq_scan.py`: “maximal” probe for one constant at a time (e.g., `zeta(3)`, `zeta(5)`, `zeta(7)`, `zeta(9)`, Catalan, Euler–Mascheroni). Run it as a script to scan the built-in targets, or adapt `run_maximal_scan` for your own constant and bounds.
 
 ### Linear independence scans (many numbers)
 - `z_p/experiments/linear_independence_scan.py`: searches for integer linear relations  
@@ -109,11 +110,17 @@ z_p/
     pslq_scan.py           # Z(p) algebraic scans across primes
     maximal_pslq_scan.py   # Algebraic scan for a single hard constant
     linear_independence_scan.py  # PSLQ search for integer linear relations
+  utils/
+    pslq_helpers.py        # Shared PSLQ helpers (algebraic + linear)
 tests/
   test_cp.py               # Rational values of c_p for p=3,5,7
+  test_linear_independence.py  # Integration tests for linear relations
 .github/workflows/
   ci.yml                   # Python 3.11 CI: lint + tests
+notebooks/
+  odd_zeta_scan.ipynb      # Example PSLQ run on ζ(3)
 requirements.txt
+CONTRIBUTING.md
 LICENSE
 ```
 
