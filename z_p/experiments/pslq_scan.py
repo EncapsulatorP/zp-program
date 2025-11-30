@@ -5,8 +5,8 @@ Example:
 """
 import argparse
 import mpmath as mp
+from mpmath import pslq
 import sympy as sp
-from sympy import pslq
 
 def c_p_rational(p: int) -> sp.Rational:
     assert p % 2 == 1 and p >= 3
@@ -24,9 +24,8 @@ def Z_of_p(p: int, prec: int = 300) -> mp.mpf:
     return mp.e ** exponent + 1
 
 def try_pslq(x: mp.mpf, deg: int, height: int):
-    # Integer relation among [1, x, x^2, ..., x^deg] using sympy.pslq
-    sx = sp.Float(str(x), mp.mp.dps)  # high-precision decimal to SymPy Float
-    vec = [sx**i for i in range(deg + 1)]
+    # Integer relation among [1, x, x^2, ..., x^deg] using mpmath.pslq
+    vec = [mp.mpf(x) ** i for i in range(deg + 1)]
     return pslq(vec, maxcoeff=height)
 
 def main():
