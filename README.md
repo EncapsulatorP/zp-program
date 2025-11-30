@@ -136,7 +136,8 @@ If you use this work in your research, please cite:
 -title={Z(p) Irrationality & Transcendence Explorer},
 -author={kugguk2022},
 -year={2025}, 
--url={[https://github.com/kugguk2022/lotteries](https://github.com/EncapsulatorP/zp-program/)} }
+-url={[https://github.com/EncapsulatorP/zp-program/tree/main)]}}
+
 ```
 
 ```
